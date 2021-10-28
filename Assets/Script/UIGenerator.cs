@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIGenerator : MonoBehaviour
@@ -33,23 +34,24 @@ public class UIGenerator : MonoBehaviour
         {
             case 1:
                 Destroy(mentalPrefab1);
-                Debug.Log("¸àÅ» °¨¼Ò");
+                //Debug.Log("¸àÅ» °¨¼Ò");
                 break;
             case 2:
                 Destroy(mentalPrefab1);
                 Destroy(mentalPrefab2);
-                Debug.Log("¸àÅ» °¨¼Ò");
+                //Debug.Log("¸àÅ» °¨¼Ò");
                 break;
             case 3:
                 Destroy(mentalPrefab1);
                 Destroy(mentalPrefab2);
                 Destroy(mentalPrefab3);
-                Debug.Log("¸àÅ» °¨¼Ò");
+                //Debug.Log("¸àÅ» °¨¼Ò");
                 break;
         }
         if(mentalDamage == 3)
         {
             Debug.Log("GameOver");
+            SceneManager.LoadScene("GameOver");
         }
     }
 
@@ -59,23 +61,24 @@ public class UIGenerator : MonoBehaviour
         {
             case 1:
                 Destroy(heartPrefab1);
-                Debug.Log("Ã¼·Â °¨¼Ò");
+                //Debug.Log("Ã¼·Â °¨¼Ò");
                 break;
             case 2:
                 Destroy(heartPrefab1);
                 Destroy(heartPrefab2);
-                Debug.Log("Ã¼·Â °¨¼Ò");
+                //Debug.Log("Ã¼·Â °¨¼Ò");
                 break;
             case 3:
                 Destroy(heartPrefab1);
                 Destroy(heartPrefab2);
                 Destroy(heartPrefab3);
-                Debug.Log("Ã¼·Â °¨¼Ò");
+                //Debug.Log("Ã¼·Â °¨¼Ò");
                 break;
         }
         if(heartDamage == 3)
         {
             Debug.Log("GameOver");
+            SceneManager.LoadScene("GameOver");
         }
     }
 

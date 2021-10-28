@@ -514,8 +514,8 @@ GameObject:
   - component: {fileID: 728366017}
   - component: {fileID: 728366016}
   - component: {fileID: 728366015}
-  - component: {fileID: 728366018}
   - component: {fileID: 728366019}
+  - component: {fileID: 728366020}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -606,18 +606,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &728366018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 728366013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39b64b9c9b71b694fb325e544685d1ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &728366019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -636,10 +624,28 @@ MonoBehaviour:
   m_text: 
   Dnobs: 1
   test: 0
-  selif: Data/Chapter1/chapter1 3-2
+  serif: Data/Chapter1/chapter1 3-2
   ChoicePrefab1: {fileID: 99708998}
   ChoicePrefab2: {fileID: 351031696}
   count: 5
+--- !u!114 &728366020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728366013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdbdbeff785e7054ab98b6c1ec31ee29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ug: {fileID: 0}
+  tej: {fileID: 0}
+  sc1: {fileID: 99709003}
+  sc2: {fileID: 351031701}
+  inputChoice1: {fileID: 1538091473}
+  inputChoice2: {fileID: 1059866225}
 --- !u!1 &1059866223
 GameObject:
   m_ObjectHideFlags: 0

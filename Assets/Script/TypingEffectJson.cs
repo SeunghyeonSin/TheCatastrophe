@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using Newtonsoft.Json;
 
 public class TypingEffectJson : MonoBehaviour
 {
+    //UI 변수 선언
+    public GameObject ui;
+
     //데이터를 담을 딕셔너리 선언
     public Dictionary<int, TextLoadTest> dicTextLoadText;
 
@@ -30,7 +34,7 @@ public class TypingEffectJson : MonoBehaviour
     public bool test = false;
 
     //대사위치 변수 선언
-    public string selif;
+    public string serif;
 
     //선택지 선언
     public GameObject ChoicePrefab1;
@@ -109,7 +113,7 @@ public class TypingEffectJson : MonoBehaviour
         this.dicTextLoadText = new Dictionary<int, TextLoadTest>();
         this.dex = 1;
 
-        var oj = Resources.Load(selif) as TextAsset;
+        var oj = Resources.Load(serif) as TextAsset;
 
         var jlist = JsonConvert.DeserializeObject<List<TextLoadTest>>(oj.text);
 
@@ -120,6 +124,8 @@ public class TypingEffectJson : MonoBehaviour
         }
         _readJson(this.dex);
 
+        //UI게임오브젝트 검색
+        ui = GameObject.Find("UI");
     }
 
     // Update is called once per frame
@@ -141,6 +147,14 @@ public class TypingEffectJson : MonoBehaviour
         if (count == this.dex)
         {
             _endJson();
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            Debug.Log("SceneChange!!");
+            SceneManager.LoadScene("Main");
+            Debug.Log("Destroy");
+            GameObject.Destroy(ui);
         }
     }
 }

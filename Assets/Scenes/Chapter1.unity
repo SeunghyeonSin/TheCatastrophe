@@ -379,6 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3cc0a01f7bf763458c6f1f5172d3640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ug: {fileID: 0}
 --- !u!1 &104331485
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,7 +389,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 104331487}
-  - component: {fileID: 104331486}
   - component: {fileID: 104331488}
   - component: {fileID: 104331489}
   m_Layer: 0
@@ -398,18 +398,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &104331486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 104331485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a21e13161383cc541bc2632e93fcc37b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &104331487
 Transform:
   m_ObjectHideFlags: 0
@@ -642,6 +630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3cc0a01f7bf763458c6f1f5172d3640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ug: {fileID: 0}
 --- !u!1001 &379892089
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -796,8 +785,8 @@ GameObject:
   - component: {fileID: 728366017}
   - component: {fileID: 728366016}
   - component: {fileID: 728366015}
-  - component: {fileID: 728366018}
   - component: {fileID: 728366019}
+  - component: {fileID: 728366020}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -888,18 +877,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &728366018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 728366013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39b64b9c9b71b694fb325e544685d1ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &728366019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -912,16 +889,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2ba6bc515986e49912631359b06aba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UI: {fileID: 104331485}
   id: 0
   text: 
   label: {fileID: 1624711479}
   m_text: 
   Dnobs: 1
   test: 0
-  selif: Data/Chapter1/chapter1
+  serif: Data/Chapter1/chapter1
   ChoicePrefab1: {fileID: 99708998}
   ChoicePrefab2: {fileID: 351031696}
   count: 9
+--- !u!114 &728366020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728366013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdbdbeff785e7054ab98b6c1ec31ee29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ug: {fileID: 0}
+  tej: {fileID: 0}
+  sc1: {fileID: 99709003}
+  sc2: {fileID: 351031701}
+  inputChoice1: {fileID: 1538091473}
+  inputChoice2: {fileID: 1059866225}
 --- !u!1 &1059866223
 GameObject:
   m_ObjectHideFlags: 0
