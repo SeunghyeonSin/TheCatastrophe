@@ -14,6 +14,7 @@ public class SaveDataPrefs : MonoBehaviour
 
     public void Save()
     {
+        Debug.Log("Save");
         PlayerPrefs.SetInt("Mental", ug.mentalDamage);
         PlayerPrefs.SetInt("Hp", ug.heartDamage);
         PlayerPrefs.SetString("C1", inputChoice1.text);
@@ -33,6 +34,7 @@ public class SaveDataPrefs : MonoBehaviour
         tej = GameObject.Find("Canvas").GetComponent<TypingEffectJson>();
         //sc1 = GameObject.Find("Choice1").GetComponent<SceneChange>();
         //sc2 = GameObject.Find("Choice2").GetComponent<SceneChange>();
+        Save();
     }
 
     // Update is called once per frame
@@ -40,7 +42,6 @@ public class SaveDataPrefs : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1))
         {
-            Debug.Log("Save");
             Save();
         }
     }

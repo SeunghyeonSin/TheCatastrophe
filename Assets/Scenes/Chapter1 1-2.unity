@@ -646,6 +646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2ba6bc515986e49912631359b06aba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ui: {fileID: 0}
   id: 0
   text: 
   label: {fileID: 1624711479}

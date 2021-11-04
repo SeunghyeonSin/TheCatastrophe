@@ -25,6 +25,9 @@ public class SceneChange : MonoBehaviour, IPointerClickHandler
 
     void Update()
     {
-        
+        if (check == true && Input.GetMouseButtonDown(0))
+        {
+            Change();
+        }
     }
 }
