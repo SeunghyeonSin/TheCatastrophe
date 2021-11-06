@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TypeWriterEffect : MonoBehaviour
 {
+    //넘어갈 씬
+    public string scenename;
+
     //변경할 변수
-	public float delay;
+    public float delay;
     public float Skip_delay;
     public int cnt;
 
@@ -31,13 +35,14 @@ public class TypeWriterEffect : MonoBehaviour
     //모든 텍스트 호출완료시 탈출
     void Update()
     {
-        if(text_exit==true)
-        {
-            gameObject.SetActive(false);
-        }
-        else if (Input.GetMouseButtonDown(0))
+        if (text_full == true)
         {
             End_Typing();
+        }
+
+        if (cnt == dialog_cnt)
+        {
+            SceneManager.LoadScene(scenename);
         }
         
     }
@@ -89,10 +94,8 @@ public class TypeWriterEffect : MonoBehaviour
         else
         {
             //기존문구clear
-            //currentText = "";
-            //줄 바꿈
-            newline = "\n";
-            //타이핑 시작
+            currentText = "";
+
             for (int i = 0; i < _fullText[cnt].Length; i++)
             {
                 //타이핑중도탈출

@@ -51,6 +51,10 @@ public class TypingEffectJson : MonoBehaviour
     public int wantimagenumber2;
     public int wantimagenumber3;
 
+    //다음챕터 넘어가기
+    public string scenename;
+    public bool nextchaptercheck = false;
+
     //이미지변경 카운트 세기
     void CountChangeImage()
     {
@@ -125,7 +129,12 @@ public class TypingEffectJson : MonoBehaviour
     {
         StopCoroutine(coroutine);
         test = false;
-        if (Input.GetMouseButtonDown(0))
+        if (nextchaptercheck == true)
+        {
+            if (Input.GetMouseButtonDown(0))
+                SceneManager.LoadScene(scenename);
+        }
+        else if (Input.GetMouseButtonDown(0))
             ShowChoice();
     }
 
@@ -191,12 +200,16 @@ public class TypingEffectJson : MonoBehaviour
             _endJson();
         }
 
-        if (Input.GetMouseButtonDown(1))
+        if (Application.platform == RuntimePlatform.Android)
         {
-            Debug.Log("SceneChange!!");
-            SceneManager.LoadScene("Main");
-            Debug.Log("Destroy");
-            GameObject.Destroy(ui);
+            if (Input.GetKey(KeyCode.Escape)) //뒤로가기 키 입력
+            {
+                Debug.Log("SceneChange!!");
+                SceneManager.LoadScene("Main");
+                Debug.Log("Destroy");
+                GameObject.Destroy(ui);
+            }
+
         }
     }
 }
