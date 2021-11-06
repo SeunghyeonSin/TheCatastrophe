@@ -39,7 +39,41 @@ public class TypingEffectJson : MonoBehaviour
     //선택지 선언
     public GameObject ChoicePrefab1;
     public GameObject ChoicePrefab2;
+    public GameObject ChoicePrefabImage;
     public int count;
+
+    //이미지변경 카운트 선언
+    public ChangeImage ci;
+    public int changenumber1;
+    public int changenumber2;
+    public int changenumber3;
+    public int wantimagenumber1;
+    public int wantimagenumber2;
+    public int wantimagenumber3;
+
+    //이미지변경 카운트 세기
+    void CountChangeImage()
+    {
+        if (changenumber1 == dex)
+        {
+            ci.pnum = wantimagenumber1; //바꿀 이미지 번호
+            ci.NextImage();
+            Debug.Log("원하는 첫번째 사진");
+        }
+        else if (changenumber2 == dex)
+        {
+            ci.pnum = wantimagenumber2; //바꿀 이미지 번호
+            ci.NextImage();
+            Debug.Log("원하는 두번째 사진");
+        }
+        else if (changenumber3 == dex)
+        {
+            ci.pnum = wantimagenumber3; //바꿀 이미지 번호
+            ci.NextImage();
+            Debug.Log("원하는 세번째 사진");
+        }
+
+    }
 
     //선택지 활성
     void ShowChoice()
@@ -48,6 +82,7 @@ public class TypingEffectJson : MonoBehaviour
         {
             ChoicePrefab1.SetActive(true);
             ChoicePrefab2.SetActive(true);
+            ChoicePrefabImage.SetActive(true);
         }
     }
 
@@ -89,8 +124,9 @@ public class TypingEffectJson : MonoBehaviour
     void _endJson()
     {
         StopCoroutine(coroutine);
-        ShowChoice();
         test = false;
+        if (Input.GetMouseButtonDown(0))
+            ShowChoice();
     }
 
     void _endtyping()
@@ -104,11 +140,16 @@ public class TypingEffectJson : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //이미지 스크립트 선언
+        ci = GameObject.Find("Image").GetComponent<ChangeImage>();
+
         //선택지 비활성
         this.ChoicePrefab1 = GameObject.Find("Choice1");
         this.ChoicePrefab2 = GameObject.Find("Choice2");
+        this.ChoicePrefabImage = GameObject.Find("ChoiceBackImage");
         ChoicePrefab1.SetActive(false);
         ChoicePrefab2.SetActive(false);
+        ChoicePrefabImage.SetActive(false);
 
         this.dicTextLoadText = new Dictionary<int, TextLoadTest>();
         this.dex = 1;
@@ -142,6 +183,7 @@ public class TypingEffectJson : MonoBehaviour
             Dnobs = true;
             test = false;
             _readJson(this.dex);
+            CountChangeImage();
         }
 
         if (count == this.dex)

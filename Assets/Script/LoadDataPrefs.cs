@@ -11,6 +11,7 @@ public class LoadDataPrefs : MonoBehaviour
     public SceneChange sc2;
     public Text inputChoice1;
     public Text inputChoice2;
+    public ChangeImage ci;
 
     public void Load()
     {
@@ -38,6 +39,17 @@ public class LoadDataPrefs : MonoBehaviour
             sc1.scenename = PlayerPrefs.GetString("SC1");
             sc2.scenename = PlayerPrefs.GetString("SC2");
         }
+
+        if (PlayerPrefs.HasKey("Image"))
+        {
+            ci.pnum = PlayerPrefs.GetInt("Image");
+            tej.changenumber1 = PlayerPrefs.GetInt("Changenumber1");
+            tej.changenumber2 = PlayerPrefs.GetInt("Changenumber2");
+            tej.changenumber3 = PlayerPrefs.GetInt("Changenumber3");
+            tej.wantimagenumber1 = PlayerPrefs.GetInt("Wantnumber1");
+            tej.wantimagenumber2 = PlayerPrefs.GetInt("Wantnumber2");
+            tej.wantimagenumber3 = PlayerPrefs.GetInt("Wantnumber3");
+        }
     }
     // Start is called before the first frame update
     void Start()
@@ -46,6 +58,7 @@ public class LoadDataPrefs : MonoBehaviour
         tej = GameObject.Find("Canvas").GetComponent<TypingEffectJson>();
         sc1 = GameObject.Find("Choice1").GetComponent<SceneChange>();
         sc2 = GameObject.Find("Choice2").GetComponent<SceneChange>();
+        ci = GameObject.Find("Image").GetComponent<ChangeImage>();
         Load();
     }
 

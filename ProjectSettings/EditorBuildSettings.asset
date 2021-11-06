@@ -15,36 +15,30 @@ EditorBuildSettings:
     path: Assets/Scenes/Check.unity
     guid: 3bdb4cdcba422794dbdbeea19e47ea31
   - enabled: 1
-    path: Assets/Scenes/Continue.unity
-    guid: 4489ce20fc02e5d458b0caeb7c8f1937
-  - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 2f711f861f39cc04290416c4350983ec
   - enabled: 1
     path: Assets/Scenes/Chapter1.unity
     guid: c2c6cd90e29819c4881ce4befad934fb
   - enabled: 1
-    path: Assets/Scenes/Chapter1 3-1.unity
-    guid: f068238f2832cb2449e79887396b8f69
+    path: Assets/Scenes/Continue.unity
+    guid: 89efc280637bbc04c8e09f34d157f5ed
   - enabled: 1
-    path: Assets/Scenes/Chapter1 3-2.unity
-    guid: 569a8544cb4b62245a2b4d22509e75ea
-  - enabled: 1
-    path: Assets/Scenes/Chapter1 1-1.unity
-    guid: 33b55b18448d0a948bee4fbf84d02f71
-  - enabled: 1
-    path: Assets/Scenes/Chapter1 1-2.unity
-    guid: 9f8376a15e25b554694f616f0522167e
-  - enabled: 1
-    path: Assets/Scenes/Chapter1 1-3.unity
-    guid: 634149d87f622674e8a6470e234ab33b
+    path: Assets/Scenes/Chapter1 1.unity
+    guid: 0885ccb23c048f14f9057bc77d6ee14a
   - enabled: 1
     path: Assets/Scenes/Chapter1 2-1.unity
-    guid: 070f2efbfd42bd44fa11656102ff4433
+    guid: a97d7462c64e37c4c9bd4bced8d99c69
   - enabled: 1
     path: Assets/Scenes/Chapter1 2-2.unity
-    guid: 1f5d9f1b104f9e84d8a04f2c211c8e14
+    guid: 2993e2bd27c97f746bd81389dbcb66aa
   - enabled: 1
     path: Assets/Scenes/Chapter1 2-3.unity
-    guid: 222f9e11c408c774294e32d2426a7335
+    guid: 7cc944f8efe9dc54f8ed08fc0acbd9dc
+  - enabled: 1
+    path: Assets/Scenes/Chapter1 3-1.unity
+    guid: 6475dd4de648df043b6fa459b47d3eb0
+  - enabled: 1
+    path: Assets/Scenes/Chapter1 3-2.unity
+    guid: 4827a4cc5608ea047bc4543e209ba35a
   m_configObjects: {}
