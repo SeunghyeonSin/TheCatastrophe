@@ -176,7 +176,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ReferenceResolution: {x: 1440, y: 2560}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -515,8 +515,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1948260235}
   - component: {fileID: 1948260233}
-  - component: {fileID: 1948260234}
   - component: {fileID: 1948260236}
+  - component: {fileID: 1948260234}
   m_Layer: 0
   m_Name: backgroundMusic
   m_TagString: Music
@@ -629,9 +629,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1948260232}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d9f3549ae1f75c4f942543df9e1b05e, type: 3}
+  m_Script: {fileID: 11500000, guid: 64663f59bd27bd64b840f55e6aa50f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scenename: Main
 --- !u!4 &1948260235
 Transform:
   m_ObjectHideFlags: 0
@@ -658,3 +659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2836265a59d1c7c46881234b5580e429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameObjectName:
+  - {fileID: 1948260232}
+  AudioSourceMusic: {fileID: 1948260233}
+  tag: Music

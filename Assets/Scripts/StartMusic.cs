@@ -4,31 +4,37 @@ using UnityEngine;
 
 public class StartMusic : MonoBehaviour
 {
+    public GameObject[] GameObjectName;
+    public AudioSource AudioSourceMusic;
+    public string tag;
 
-    private GameObject[] backgroundMusic;
-    private AudioSource backMusic;
 
+    //씬 이동시 배경음이 안끊기고 유지
     void Awake()
     {
-        backgroundMusic = GameObject.FindGameObjectsWithTag("Music");
+        GameObjectName = GameObject.FindGameObjectsWithTag(tag);
 
-        if (backgroundMusic.Length >= 2)
+        if (GameObjectName.Length >= 2)
         {
             Destroy(this.gameObject);
         }
 
         DontDestroyOnLoad(transform.gameObject);
-        backMusic = GetComponent<AudioSource>();
+        AudioSourceMusic = GetComponent<AudioSource>();
+
     }
 
     public void PlayMusic()
     {
-        if (backMusic.isPlaying) return;
-        backMusic.Play();
+        if (AudioSourceMusic.isPlaying) return;
+        AudioSourceMusic.Play();
     }
 
     public void StopMusic()
     {
-        backMusic.Stop();
+        AudioSourceMusic.Stop();
     }
+
 }
+
+

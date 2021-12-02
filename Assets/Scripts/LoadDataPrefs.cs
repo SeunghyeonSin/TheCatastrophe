@@ -12,6 +12,16 @@ public class LoadDataPrefs : MonoBehaviour
     public Text inputChoice1;
     public Text inputChoice2;
     public ChangeImage ci;
+    public Achieve a1;
+    public Achieve a2;
+
+    bool intToBool(int val)
+    {
+        if (val != 0)
+            return true;
+        else
+            return false;
+    }
 
     public void Load()
     {
@@ -32,6 +42,8 @@ public class LoadDataPrefs : MonoBehaviour
         {
             tej.serif = PlayerPrefs.GetString("Serif");
             tej.count = PlayerPrefs.GetInt("Count");
+            tej.scenename = PlayerPrefs.GetString("Scenename");
+            tej.nextchaptercheck = intToBool(PlayerPrefs.GetInt("Next"));
         }
 
         if (PlayerPrefs.HasKey("SC1"))
@@ -46,10 +58,24 @@ public class LoadDataPrefs : MonoBehaviour
             tej.changenumber1 = PlayerPrefs.GetInt("Changenumber1");
             tej.changenumber2 = PlayerPrefs.GetInt("Changenumber2");
             tej.changenumber3 = PlayerPrefs.GetInt("Changenumber3");
+            tej.changenumber4 = PlayerPrefs.GetInt("Changenumber4");
+            tej.changenumber5 = PlayerPrefs.GetInt("Changenumber5");
             tej.wantimagenumber1 = PlayerPrefs.GetInt("Wantnumber1");
             tej.wantimagenumber2 = PlayerPrefs.GetInt("Wantnumber2");
             tej.wantimagenumber3 = PlayerPrefs.GetInt("Wantnumber3");
+            tej.wantimagenumber4 = PlayerPrefs.GetInt("Wantnumber4");
+            tej.wantimagenumber5 = PlayerPrefs.GetInt("Wantnumber5");
         }
+        if (PlayerPrefs.HasKey("Achname1"))
+        {
+            a1.achname = PlayerPrefs.GetString("Achname1");
+            a2.achname = PlayerPrefs.GetString("Achname2");
+            a1.achinum = PlayerPrefs.GetInt("Achinum1");
+            a2.achinum = PlayerPrefs.GetInt("Achinum2");
+            a1.achipath = PlayerPrefs.GetString("Achipath1");
+            a2.achipath = PlayerPrefs.GetString("Achipath2");
+        }
+
     }
     // Start is called before the first frame update
     void Start()

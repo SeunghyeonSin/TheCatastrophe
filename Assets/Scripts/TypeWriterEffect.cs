@@ -2,6 +2,9 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using LitJson;
+using System.IO;
+using System;
 
 public class TypeWriterEffect : MonoBehaviour
 {
@@ -24,11 +27,53 @@ public class TypeWriterEffect : MonoBehaviour
     public bool text_full;
     public bool text_cut;
 
+    //업적명 변수 선언
+    public string achname;
+    public int achinum;
+
+    //업적 경로
+    public string achipath;
+
+    //UI Destroy 선언
+    public GameObject ui;
+
+    //조건변수
+    public bool achievements = false;
+
+    private void _ShowAndroidToastMessage(string message)
+    {
+        AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+        AndroidJavaObject unityActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
+
+        if (unityActivity != null)
+        {
+            AndroidJavaClass toastClass = new AndroidJavaClass("android.widget.Toast");
+            unityActivity.Call("runOnUiThread", new AndroidJavaRunnable(() =>
+            {
+                AndroidJavaObject toastObject = toastClass.CallStatic<AndroidJavaObject>("makeText", unityActivity, message, 0);
+                toastObject.Call("show");
+            }));
+        }
+    }
+
+    //선택지 클릭시 업적 내용 저장
+    public void SaveAchieveInfo()
+    {
+        _ShowAndroidToastMessage(achname);
+        AchieveInfo achieveinfoData = new AchieveInfo(achinum, achname);
+
+        Debug.Log("Save AchieveInfo");
+
+        JsonData infoJson = JsonMapper.ToJson(achieveinfoData);
+
+        File.WriteAllText(Application.persistentDataPath + achipath, infoJson.ToString());
+    }
 
     //시작과 동시에 타이핑시작
     void Start()
     {
         Get_Typing(dialog_cnt,fulltext);
+        ui = GameObject.Find("UI");
     }
 
 
@@ -42,7 +87,17 @@ public class TypeWriterEffect : MonoBehaviour
 
         if (cnt == dialog_cnt)
         {
-            SceneManager.LoadScene(scenename);
+            if (achievements == true)
+            {
+                SaveAchieveInfo();
+                GameObject.Destroy(ui);
+                SceneManager.LoadScene(scenename);
+            }
+            else
+            {
+                SceneManager.LoadScene(scenename);
+                //GameObject.Destroy(ui);
+            }
         }
         
     }

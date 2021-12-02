@@ -17,12 +17,16 @@ public class AchieveLoac : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string Jsonstring = File.ReadAllText(Application.dataPath + LoadAchi);
+        string Jsonstring = File.ReadAllText(Application.persistentDataPath + LoadAchi);
         JsonData Jsondata = JsonMapper.ToObject(Jsonstring);
         //Debug.Log(Jsonstring);
-
+        
         //JsonText.text = Jsonstring;
         JsonText.text = Jsondata["AchieveTEXT"].ToString();
+
+        /*TextAsset sourcefile = Resources.Load<TextAsset>(LoadAchi);
+        StringReader sr = new StringReader(sourcefile.text);
+        Debug.Log(sr);*/
     }
 
     // Update is called once per frame

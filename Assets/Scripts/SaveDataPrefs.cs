@@ -12,6 +12,16 @@ public class SaveDataPrefs : MonoBehaviour
     public Text inputChoice1;
     public Text inputChoice2;
     public ChangeImage ci;
+    public Achieve a1;
+    public Achieve a2;
+
+    int boolToInt(bool val)
+    {
+        if (val)
+            return 1;
+        else
+            return 0;
+    }
 
     public void AutoSave()
     {
@@ -22,15 +32,27 @@ public class SaveDataPrefs : MonoBehaviour
         PlayerPrefs.SetString("C2", inputChoice2.text);
         PlayerPrefs.SetString("Serif", tej.serif);
         PlayerPrefs.SetInt("Count", tej.count);
+        PlayerPrefs.SetString("Scenename", tej.scenename);
+        PlayerPrefs.SetInt("Next", boolToInt(tej.nextchaptercheck));
         PlayerPrefs.SetString("SC1", sc1.scenename);
         PlayerPrefs.SetString("SC2", sc2.scenename);
         PlayerPrefs.SetInt("Image", ci.pnum);
         PlayerPrefs.SetInt("Changenumber1", tej.changenumber1);
         PlayerPrefs.SetInt("Changenumber2", tej.changenumber2);
         PlayerPrefs.SetInt("Changenumber3", tej.changenumber3);
+        PlayerPrefs.SetInt("Changenumber4", tej.changenumber4);
+        PlayerPrefs.SetInt("Changenumber5", tej.changenumber5);
         PlayerPrefs.SetInt("Wantnumber1", tej.wantimagenumber1);
         PlayerPrefs.SetInt("Wantnumber2", tej.wantimagenumber2);
         PlayerPrefs.SetInt("Wantnumber3", tej.wantimagenumber3);
+        PlayerPrefs.SetInt("Wantnumber4", tej.wantimagenumber4);
+        PlayerPrefs.SetInt("Wantnumber5", tej.wantimagenumber5);
+        PlayerPrefs.SetString("Achname1", a1.achname);
+        PlayerPrefs.SetInt("Achinum1", a1.achinum);
+        PlayerPrefs.SetString("Achipath1", a1.achipath);
+        PlayerPrefs.SetString("Achname2", a2.achname);
+        PlayerPrefs.SetInt("Achinum2", a2.achinum);
+        PlayerPrefs.SetString("Achipath2", a2.achipath);
 
     }
 
@@ -48,9 +70,13 @@ public class SaveDataPrefs : MonoBehaviour
         PlayerPrefs.SetInt("Changenumber1", tej.changenumber1);
         PlayerPrefs.SetInt("Changenumber2", tej.changenumber2);
         PlayerPrefs.SetInt("Changenumber3", tej.changenumber3);
+        PlayerPrefs.SetInt("Changenumber4", tej.changenumber4);
+        PlayerPrefs.SetInt("Changenumber5", tej.changenumber5);
         PlayerPrefs.SetInt("Wantnumber1", tej.wantimagenumber1);
         PlayerPrefs.SetInt("Wantnumber2", tej.wantimagenumber2);
         PlayerPrefs.SetInt("Wantnumber3", tej.wantimagenumber3);
+        PlayerPrefs.SetInt("Wantnumber4", tej.wantimagenumber4);
+        PlayerPrefs.SetInt("Wantnumber5", tej.wantimagenumber5);
     }
 
 
@@ -71,6 +97,14 @@ public class SaveDataPrefs : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             Save();
+        }
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            if (Input.GetKey(KeyCode.Escape)) //뒤로가기 키 입력
+            {
+                Save();
+            }
+
         }
     }
 }

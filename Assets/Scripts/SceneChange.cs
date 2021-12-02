@@ -9,6 +9,7 @@ public class SceneChange : MonoBehaviour, IPointerClickHandler
     public string scenename;
     public bool check;
 
+
     public void OnPointerClick(PointerEventData data)
     {
         Debug.Log("SceneChange!!");

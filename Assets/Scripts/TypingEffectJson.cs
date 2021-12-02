@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Newtonsoft.Json;
+using LitJson;
+using System.IO;
 
 public class TypingEffectJson : MonoBehaviour
 {
@@ -47,13 +49,20 @@ public class TypingEffectJson : MonoBehaviour
     public int changenumber1;
     public int changenumber2;
     public int changenumber3;
+    public int changenumber4;
+    public int changenumber5;
     public int wantimagenumber1;
     public int wantimagenumber2;
     public int wantimagenumber3;
+    public int wantimagenumber4;
+    public int wantimagenumber5;
 
     //다음챕터 넘어가기
     public string scenename;
     public bool nextchaptercheck = false;
+
+    //배경음 제어
+    private GameObject Music;
 
     //이미지변경 카운트 세기
     void CountChangeImage()
@@ -75,6 +84,18 @@ public class TypingEffectJson : MonoBehaviour
             ci.pnum = wantimagenumber3; //바꿀 이미지 번호
             ci.NextImage();
             Debug.Log("원하는 세번째 사진");
+        }
+        else if (changenumber4 == dex)
+        {
+            ci.pnum = wantimagenumber4; //바꿀 이미지 번호
+            ci.NextImage();
+            Debug.Log("원하는 네번째 사진");
+        }
+        else if (changenumber5 == dex)
+        {
+            ci.pnum = wantimagenumber5; //바꿀 이미지 번호
+            ci.NextImage();
+            Debug.Log("원하는 다섯번째 사진");
         }
 
     }
@@ -132,7 +153,12 @@ public class TypingEffectJson : MonoBehaviour
         if (nextchaptercheck == true)
         {
             if (Input.GetMouseButtonDown(0))
+            {
                 SceneManager.LoadScene(scenename);
+                GameObject.Destroy(Music);
+                Debug.Log("Music OFF");
+
+            }
         }
         else if (Input.GetMouseButtonDown(0))
             ShowChoice();
@@ -163,8 +189,7 @@ public class TypingEffectJson : MonoBehaviour
         this.dicTextLoadText = new Dictionary<int, TextLoadTest>();
         this.dex = 1;
 
-        var oj = Resources.Load(serif) as TextAsset;
-
+        TextAsset oj = (TextAsset)Resources.Load(serif, typeof(TextAsset));
         var jlist = JsonConvert.DeserializeObject<List<TextLoadTest>>(oj.text);
 
         //각각의 내용들을 딕셔너리에 담음
@@ -176,6 +201,8 @@ public class TypingEffectJson : MonoBehaviour
 
         //UI게임오브젝트 검색
         ui = GameObject.Find("UI");
+        //뮤직오브젝트 검색
+        Music = GameObject.Find("backgroundMusic");
     }
 
     // Update is called once per frame
@@ -210,6 +237,13 @@ public class TypingEffectJson : MonoBehaviour
                 GameObject.Destroy(ui);
             }
 
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            Debug.Log("SceneChange!!");
+            SceneManager.LoadScene("Main");
+            Debug.Log("Destroy");
+            GameObject.Destroy(ui);
         }
     }
 }

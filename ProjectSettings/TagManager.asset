@@ -10,6 +10,12 @@ TagManager:
   - Mental1
   - Mental2
   - Mental3
+  - Music
+  - Chapter1Music
+  - Chapter2Music
+  - Chapter3Music
+  - EndingMusic
+  - GameOverMusic
   layers:
   - Default
   - TransparentFX
